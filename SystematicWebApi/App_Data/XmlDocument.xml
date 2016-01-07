@@ -481,5 +481,55 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:SystematicWebApi.Controllers.ProductsController">
+            <summary>
+            产品接口
+            </summary>
+        </member>
+        <member name="M:SystematicWebApi.Controllers.ProductsController.GetAllProducts">
+            <summary>
+            获取所有产品列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SystematicWebApi.Controllers.ProductsController.GetProductById(System.Int32)">
+            <summary>
+            根据id获取产品详情
+            </summary>
+            <param name="id">产品id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SystematicWebApi.Controllers.ProductsController.GetProductsByCategory(System.String)">
+            <summary>
+            根据分类获取产品列表
+            </summary>
+            <param name="category">分类</param>
+            <returns></returns>
+        </member>
+        <member name="T:SystematicWebApi.Models.Products.ProductModel">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="P:SystematicWebApi.Models.Products.ProductModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SystematicWebApi.Models.Products.ProductModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SystematicWebApi.Models.Products.ProductModel.Category">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:SystematicWebApi.Models.Products.ProductModel.Price">
+            <summary>
+            价格
+            </summary>
+        </member>
     </members>
 </doc>
