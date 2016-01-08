@@ -506,6 +506,27 @@
             <param name="category">分类</param>
             <returns></returns>
         </member>
+        <member name="M:SystematicWebApi.Controllers.ProductsController.PostProduct(SystematicWebApi.Models.Products.ProductModel)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SystematicWebApi.Controllers.ProductsController.PutProduct(System.Int32,SystematicWebApi.Models.Products.ProductModel)">
+            <summary>
+            根据id更新产品
+            </summary>
+            <param name="id">产品id</param>
+            <param name="product"></param>
+        </member>
+        <member name="M:SystematicWebApi.Controllers.ProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            删除指定id的产品
+            </summary>
+            <param name="id">产品id</param>
+            <returns></returns>
+        </member>
         <member name="T:SystematicWebApi.Models.Products.ProductModel">
             <summary>
             产品

@@ -52,5 +52,48 @@ namespace SystematicWebApi.Controllers
 
             return list.Select(o => o.ToModel()).ToList();
         }
+
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public HttpResponseMessage PostProduct(ProductModel model)
+        {
+            if (model == null || !ModelState.IsValid)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            var product = _productService.Add(model.ToEntity()).ToModel();
+            var result = Request.CreateResponse(HttpStatusCode.Created, product);
+            string uri = Url.Link("DefaultApi", new { id = product.Id });
+            result.Headers.Location = new Uri(uri);
+
+            return result;
+        }
+
+        /// <summary>
+        /// 根据id更新产品
+        /// </summary>
+        /// <param name="id">产品id</param>
+        /// <param name="product"></param>
+        public void PutProduct(int id, ProductModel product)
+        {
+            product.Id = id;
+            _productService.Update(product.ToEntity());
+        }
+
+        /// <summary>
+        /// 删除指定id的产品
+        /// </summary>
+        /// <param name="id">产品id</param>
+        /// <returns></returns>
+        public HttpResponseMessage DeleteProduct(int id)
+        {
+            _productService.Remove(id);
+
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
+        }
     }
 }
