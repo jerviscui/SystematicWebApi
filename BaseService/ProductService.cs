@@ -4,28 +4,28 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain;
+using DataService;
 using Domain.Entity;
 
 namespace BaseService
 {
     public class ProductService : IProductService
     {
-        private readonly IProductRespository _productRespository;
+        private readonly IRepository<Product> _productRespository;
 
-        public ProductService(IProductRespository productRespository)
+        public ProductService(IRepository<Product> productRespository)
         {
             _productRespository = productRespository;
         }
 
         public IList<Product> GetAll()
         {
-            return _productRespository.GetAll();
+            return _productRespository.Table.Where(o => o.IsValid).ToList();
         }
 
         public Product Get(int id)
         {
-            return _productRespository.Get(id);
+            return _productRespository.Table.FirstOrDefault(o => o.IsValid && o.Id == id);
         }
 
         public Product Add(Product model)
@@ -35,22 +35,30 @@ namespace BaseService
                 throw new ArgumentNullException("model");
             }
 
-            return _productRespository.Add(model);
+            _productRespository.Add(model);
+
+            return model;
         }
 
         public void Remove(int id)
         {
-            _productRespository.Remove(id);
+            var product = _productRespository.Table.FirstOrDefault(o => o.Id == id);
+            if (product != null)
+            {
+                _productRespository.Delete(product);
+            }
         }
 
         public bool Update(Product model)
         {
-            return _productRespository.Update(model);
+            _productRespository.Update(model);
+
+            return true;
         }
 
         public IList<Product> GetByCatagory(string catagory)
         {
-            return _productRespository.GetAll().Where(o => o.Category.Equals(catagory)).ToList();
+            return _productRespository.Table.Where(o => o.IsValid && o.Category.Equals(catagory)).ToList();
         }
     }
 }

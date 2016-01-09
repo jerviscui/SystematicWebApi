@@ -9,17 +9,19 @@ using Common;
 
 namespace SystematicWebApi.Infrastructure
 {
-    public class DependenceRegister : IDependenceRegister
+    /// <summary>
+    /// use to register dbcontext
+    /// </summary>
+    public class BasicDependenceRegister : IDependenceRegister
     {
         public void Register(ContainerBuilder builder)
         {
-            builder.RegisterType<NoDbProductService>().As<IProductService>().InstancePerLifetimeScope();
-            //builder.RegisterType<ProductService>().As<IProductService>().InstancePerLifetimeScope();
+            
         }
 
         public int Order()
         {
-            return 2;
+            return 0;
         }
     }
 }

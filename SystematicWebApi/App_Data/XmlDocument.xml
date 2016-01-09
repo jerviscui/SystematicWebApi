@@ -527,6 +527,11 @@
             <param name="id">产品id</param>
             <returns></returns>
         </member>
+        <member name="T:SystematicWebApi.Infrastructure.BasicDependenceRegister">
+            <summary>
+            use to register dbcontext
+            </summary>
+        </member>
         <member name="T:SystematicWebApi.Models.Products.ProductModel">
             <summary>
             产品

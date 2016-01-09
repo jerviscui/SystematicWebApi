@@ -9,13 +9,8 @@ namespace Domain.Entity
     /// <summary>
     /// 产品
     /// </summary>
-    public class Product
+    public class Product : BaseEntity
     {
-        /// <summary>
-        /// Id
-        /// </summary>
-        public int Id { get; set; }
-
         /// <summary>
         /// 名称
         /// </summary>

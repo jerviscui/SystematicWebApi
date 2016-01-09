@@ -18,7 +18,6 @@ namespace SystematicWebApi.App_Start
         {
             var builder = new ContainerBuilder();
             
-
             //some base interface register
             //like dbcontext IRespository
 

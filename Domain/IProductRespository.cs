@@ -7,7 +7,7 @@ using Domain.Entity;
 
 namespace Domain
 {
-    public interface IProductRespository : IRespository<Product>
+    public interface IProductRespository : IRepository<Product>
     {
         IList<Product> GetAll();
 

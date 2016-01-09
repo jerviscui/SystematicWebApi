@@ -219,6 +219,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="Infrastructure\BasicDependenceRegister.cs" />
     <Compile Include="Infrastructure\DependenceRegister.cs" />
     <Compile Include="Infrastructure\ObjectMapping.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
