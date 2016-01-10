@@ -8,7 +8,8 @@ namespace BaseService.Infrastructure
     {
         public void Register(ContainerBuilder builder)
         {
-            builder.RegisterType<ProductRespository>().As<IProductRespository>().InstancePerRequest();
+            //Uncomment the following RegisterType to use static data memfor test
+            //builder.RegisterType<ProductRespository>().As<IProductRespository>().InstancePerRequest();
         }
 
         public int Order()

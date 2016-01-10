@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core.Mapping;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using DataService.Map;
@@ -11,7 +12,7 @@ using Domain;
 
 namespace DataService
 {
-    public class EfDbContext<T> : DbContext, IDbContext<T> where T : BaseEntity
+    public class EfDbContext : DbContext, IDbContext
     {
         public EfDbContext()
             : base("DefaultConnection")
@@ -21,14 +22,21 @@ namespace DataService
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new ProductMap());
+            //get all BaseMap subclasses
+            var types = Assembly.GetExecutingAssembly().DefinedTypes.Where(type => type.BaseType != null &&
+                type.BaseType.IsGenericType && type.BaseType.GetGenericTypeDefinition() == typeof(BaseMap<>));
+            foreach (var typeinfo in types)
+            {
+                dynamic configurationInstance = Activator.CreateInstance(typeinfo);
+                modelBuilder.Configurations.Add(configurationInstance);
+            }
 
             base.OnModelCreating(modelBuilder);
         }
-        
-        IDbSet<T> IDbContext<T>.Table
+
+        public IDbSet<T> Table<T>() where T : BaseEntity
         {
-            get { return this.Set<T>(); }
+            return this.Set<T>();
         }
 
         public void Save()

@@ -8,10 +8,10 @@ using Domain;
 
 namespace DataService
 {
-    public interface IDbContext<T> where T : BaseEntity
+    public interface IDbContext
     {
-        IDbSet<T> Table { get; }
-
+        IDbSet<T> Table<T>() where T : BaseEntity;
+        
         void Save();
     }
 }

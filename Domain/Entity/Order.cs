@@ -8,7 +8,7 @@ namespace Domain.Entity
 {
     public class Order : BaseEntity
     {
-        public string Customer { get; set; }
+        public virtual string Customer { get; set; }
 
         // Navigation property
         // 导航属性

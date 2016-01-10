@@ -13,8 +13,10 @@ namespace SystematicWebApi.Infrastructure
     {
         public void Register(ContainerBuilder builder)
         {
-            builder.RegisterType<NoDbProductService>().As<IProductService>().InstancePerLifetimeScope();
-            //builder.RegisterType<ProductService>().As<IProductService>().InstancePerLifetimeScope();
+            //Uncomment the following RegisterType to use static data memfor test
+            //builder.RegisterType<NoDbProductService>().As<IProductService>().InstancePerLifetimeScope();
+
+            builder.RegisterType<ProductService>().As<IProductService>().InstancePerLifetimeScope();
         }
 
         public int Order()

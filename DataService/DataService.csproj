@@ -52,7 +52,14 @@
     <Compile Include="IDbContext.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Map\BaseMap.cs" />
+    <Compile Include="Map\OrderDetailMap.cs" />
+    <Compile Include="Map\OrderMap.cs" />
     <Compile Include="Map\ProductMap.cs" />
+    <Compile Include="Migrations\201601100615126_FirstCreate.cs" />
+    <Compile Include="Migrations\201601100615126_FirstCreate.Designer.cs">
+      <DependentUpon>201601100615126_FirstCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
@@ -65,6 +72,11 @@
       <Project>{fb9a6b2f-a41b-453d-8986-da020e09ce16}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601100615126_FirstCreate.resx">
+      <DependentUpon>201601100615126_FirstCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,16 +14,16 @@ namespace Domain.Entity
         /// <summary>
         /// 名称
         /// </summary>
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// 分类
         /// </summary>
-        public string Category { get; set; }
+        public virtual string Category { get; set; }
 
         /// <summary>
         /// 价格
         /// </summary>
-        public decimal Price { get; set; }
+        public virtual decimal Price { get; set; }
     }
 }

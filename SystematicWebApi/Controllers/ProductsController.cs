@@ -78,10 +78,12 @@ namespace SystematicWebApi.Controllers
         /// </summary>
         /// <param name="id">产品id</param>
         /// <param name="product"></param>
-        public void PutProduct(int id, ProductModel product)
+        public HttpResponseMessage PutProduct(int id, ProductModel product)
         {
             product.Id = id;
             _productService.Update(product.ToEntity());
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         /// <summary>

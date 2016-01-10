@@ -8,12 +8,11 @@ namespace Domain.Entity
 {
     public class OrderDetail : BaseEntity
     {
-        public int Quantity { get; set; }
-
-        public int OrderId { get; set; }
-
-        public int ProductId { get; set; }
-
+        public virtual int Quantity { get; set; }
+               
+        public virtual int OrderId { get; set; }
+               
+        public virtual int ProductId { get; set; }
 
         // Navigation properties
         // 导航属性

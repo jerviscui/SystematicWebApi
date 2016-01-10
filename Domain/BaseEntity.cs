@@ -16,16 +16,16 @@ namespace Domain
         /// <summary>
         /// Id
         /// </summary>
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         /// <summary>
         /// 时间戳
         /// </summary>
-        public byte[] Timespan { get; set; }
+        public virtual byte[] Timespan { get; set; }
 
         /// <summary>
         /// 是否有效，假删除
         /// </summary>
-        public bool IsValid { get; set; }
+        public virtual bool IsValid { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Http.Dependencies;
 using Autofac;
 using BaseService;
 using Common;
+using DataService;
 
 namespace SystematicWebApi.Infrastructure
 {
@@ -16,7 +17,8 @@ namespace SystematicWebApi.Infrastructure
     {
         public void Register(ContainerBuilder builder)
         {
-            
+            builder.RegisterType<EfDbContext>().As<IDbContext>().InstancePerRequest();
+            builder.RegisterGeneric(typeof (Repository<>)).As(typeof (IRepository<>)).InstancePerRequest();
         }
 
         public int Order()
