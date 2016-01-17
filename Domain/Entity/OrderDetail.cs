@@ -16,8 +16,8 @@ namespace Domain.Entity
 
         // Navigation properties
         // 导航属性
-        public Product Product { get; set; }
-
-        public Order Order { get; set; } 
+        public virtual Product Product { get; set; }
+               
+        public virtual Order Order { get; set; } 
     }
 }

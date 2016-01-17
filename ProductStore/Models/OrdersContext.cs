@@ -13,7 +13,7 @@ namespace ProductStore.Models
         // 
         // System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<ProductStore.Models.OrdersContext>());
 
-        public OrdersContext() : base("name=OrdersContext")
+        public OrdersContext() : base("name=DefaultConnection")
         {
         }
 

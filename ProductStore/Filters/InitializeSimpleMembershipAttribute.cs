@@ -26,7 +26,9 @@ namespace ProductStore.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                //Database.SetInitializer<UsersContext>(null);
+
+                Database.SetInitializer<UsersContext>(new DropCreateDatabaseIfModelChanges<UsersContext>());
 
                 try
                 {

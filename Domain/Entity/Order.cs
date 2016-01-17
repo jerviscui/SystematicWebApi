@@ -8,10 +8,15 @@ namespace Domain.Entity
 {
     public class Order : BaseEntity
     {
+        //public Order()
+        //{
+        //    OrderDetails = new List<OrderDetail>();
+        //}
+
         public virtual string Customer { get; set; }
 
         // Navigation property
         // 导航属性
-        public ICollection<OrderDetail> OrderDetails { get; set; } 
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; } 
     }
 }

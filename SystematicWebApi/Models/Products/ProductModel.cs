@@ -9,13 +9,8 @@ namespace SystematicWebApi.Models.Products
     /// <summary>
     /// 产品
     /// </summary>
-    public class ProductModel
+    public class ProductModel : BaseModel
     {
-        /// <summary>
-        /// Id
-        /// </summary>
-        public int Id { get; set; }
-
         /// <summary>
         /// 名称
         /// </summary>

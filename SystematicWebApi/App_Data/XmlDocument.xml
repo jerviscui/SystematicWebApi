@@ -481,6 +481,29 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:SystematicWebApi.Controllers.OrderController">
+            <summary>
+            订单接口
+            </summary>
+        </member>
+        <member name="M:SystematicWebApi.Controllers.OrderController.GetOrders">
+            <summary>
+            获取所有订单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SystematicWebApi.Controllers.OrderDetailController">
+            <summary>
+            订单详情
+            </summary>
+        </member>
+        <member name="M:SystematicWebApi.Controllers.OrderDetailController.GetOrderDetail(System.Int32)">
+            <summary>
+            获取订单详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:SystematicWebApi.Controllers.ProductsController">
             <summary>
             产品接口
@@ -532,14 +555,24 @@
             use to register dbcontext
             </summary>
         </member>
+        <member name="P:SystematicWebApi.Models.BaseModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:SystematicWebApi.Models.Order.OrderModel">
+            <summary>
+            订单
+            </summary>
+        </member>
+        <member name="T:SystematicWebApi.Models.OrderDetail.OrderDetailModel">
+            <summary>
+            订单详情
+            </summary>
+        </member>
         <member name="T:SystematicWebApi.Models.Products.ProductModel">
             <summary>
             产品
-            </summary>
-        </member>
-        <member name="P:SystematicWebApi.Models.Products.ProductModel.Id">
-            <summary>
-            Id
             </summary>
         </member>
         <member name="P:SystematicWebApi.Models.Products.ProductModel.Name">
@@ -556,6 +589,19 @@
             <summary>
             价格
             </summary>
+        </member>
+        <member name="M:SystematicWebApi.Models.TestContext.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            在完成对派生上下文的模型的初始化后，并在该模型已锁定并用于初始化上下文之前，将调用此方法。虽然此方法的默认实现不执行任何操作，但可在派生类中重写此方法，这样便能在锁定模型之前对其进行进一步的配置。
+            </summary>
+            <param name="modelBuilder">定义要创建的上下文的模型的生成器。</param>
+        </member>
+        <member name="M:SystematicWebApi.Models.TestContextInitializer.Seed(SystematicWebApi.Models.TestContext)">
+            <summary>
+            A method that should be overridden to actually add data to the context for seeding.
+                        The default implementation does nothing.
+            </summary>
+            <param name="context">The context to seed. </param>
         </member>
     </members>
 </doc>

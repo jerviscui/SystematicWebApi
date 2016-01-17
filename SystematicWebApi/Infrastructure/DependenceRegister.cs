@@ -17,6 +17,8 @@ namespace SystematicWebApi.Infrastructure
             //builder.RegisterType<NoDbProductService>().As<IProductService>().InstancePerLifetimeScope();
 
             builder.RegisterType<ProductService>().As<IProductService>().InstancePerLifetimeScope();
+            builder.RegisterType<OrderService>().As<IOrderService>().InstancePerLifetimeScope();
+            builder.RegisterType<OrderDetailService>().As<IOrderDetailService>().InstancePerLifetimeScope();
         }
 
         public int Order()
