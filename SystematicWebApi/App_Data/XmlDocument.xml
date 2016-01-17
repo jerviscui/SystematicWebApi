@@ -603,5 +603,25 @@
             </summary>
             <param name="context">The context to seed. </param>
         </member>
+        <member name="P:SystematicWebApi.Models.Test.TestModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SystematicWebApi.Models.Test.TestModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SystematicWebApi.Models.Test.TestModel.Category">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:SystematicWebApi.Models.Test.TestModel.Price">
+            <summary>
+            价格
+            </summary>
+        </member>
     </members>
 </doc>

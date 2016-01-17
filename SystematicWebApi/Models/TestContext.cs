@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using SystematicWebApi.Models.Test;
 using DataService.Map;
 
 namespace SystematicWebApi.Models
@@ -32,6 +33,6 @@ namespace SystematicWebApi.Models
             base.OnModelCreating(modelBuilder);
         }
 
-        public System.Data.Entity.DbSet<Domain.Entity.Product> Products { get; set; }
+        public System.Data.Entity.DbSet<TestModel> Products { get; set; }
     }
 }

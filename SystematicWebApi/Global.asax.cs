@@ -36,7 +36,7 @@ namespace SystematicWebApi
             //todo: circular reference for xml formatter?
             //....
 
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<TestContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<TestContext>());
         }
     }
 }

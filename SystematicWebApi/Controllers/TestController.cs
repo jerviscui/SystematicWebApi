@@ -9,8 +9,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Domain.Entity;
 using SystematicWebApi.Models;
+using SystematicWebApi.Models.Test;
 
 namespace SystematicWebApi.Controllers
 {
@@ -19,16 +19,16 @@ namespace SystematicWebApi.Controllers
         private TestContext db = new TestContext();
 
         // GET: api/Test
-        public IQueryable<Product> GetProducts()
+        public IQueryable<TestModel> GetProducts()
         {
             return db.Products.ToList().AsQueryable();
         }
 
         // GET: api/Test/5
-        [ResponseType(typeof(Product))]
+        [ResponseType(typeof(TestModel))]
         public async Task<IHttpActionResult> GetProduct(int id)
         {
-            Product product = await db.Products.FindAsync(id);
+            TestModel product = await db.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -39,7 +39,7 @@ namespace SystematicWebApi.Controllers
 
         // PUT: api/Test/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutProduct(int id, Product product)
+        public async Task<IHttpActionResult> PutProduct(int id, TestModel product)
         {
             if (!ModelState.IsValid)
             {
@@ -73,8 +73,8 @@ namespace SystematicWebApi.Controllers
         }
 
         // POST: api/Test
-        [ResponseType(typeof(Product))]
-        public async Task<IHttpActionResult> PostProduct(Product product)
+        [ResponseType(typeof(TestModel))]
+        public async Task<IHttpActionResult> PostProduct(TestModel product)
         {
             if (!ModelState.IsValid)
             {
@@ -88,10 +88,10 @@ namespace SystematicWebApi.Controllers
         }
 
         // DELETE: api/Test/5
-        [ResponseType(typeof(Product))]
+        [ResponseType(typeof(TestModel))]
         public async Task<IHttpActionResult> DeleteProduct(int id)
         {
-            Product product = await db.Products.FindAsync(id);
+            TestModel product = await db.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
