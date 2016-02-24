@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystematicWebApi", "SystematicWebApi\SystematicWebApi.csproj", "{5CE35ED4-C604-491A-A221-79B4183E3BCD}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductStore", "ProductStore\ProductStore.csproj", "{28C4456B-7A4D-4D87-8198-78CBBB1D0D5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService", "DataService\DataService.csproj", "{A17694F7-45A1-4024-A1B0-CF2D8558A84A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTestClient", "ApiTestClient\ApiTestClient.csproj", "{1D76D55A-C068-4650-A5EC-3E7A6C0AD3B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A17694F7-45A1-4024-A1B0-CF2D8558A84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A17694F7-45A1-4024-A1B0-CF2D8558A84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A17694F7-45A1-4024-A1B0-CF2D8558A84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D76D55A-C068-4650-A5EC-3E7A6C0AD3B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D76D55A-C068-4650-A5EC-3E7A6C0AD3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D76D55A-C068-4650-A5EC-3E7A6C0AD3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D76D55A-C068-4650-A5EC-3E7A6C0AD3B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
